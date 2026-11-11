@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172629">
+  <title>ResolveIQ — Operations intelligence</title>
+  <meta name="description" content="ResolveIQ brings issue intake, agent-guided investigation, and human-approved action into one workspace.">
+  <link rel="stylesheet" href="/static/style.css?v=1.2">
+</head>
+<body>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+ <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M4 4.5h16v15H4z"/><path d="M4 14h4l2 3h4l2-3h4"/></symbol>
+ <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C8 4 10 5 12 6.5c2-1.5 4-2.5 8-1V19c-4-1.5-6-.5-8 1-2-1.5-4-2.5-8-1z"/><path d="M12 6.5V20"/></symbol>
+ <symbol id="i-activity" viewBox="0 0 24 24"><path d="M2 12h5l3-8 4 16 3-8h5"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+ <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m7 15 5-5 5 5M12 10v10M5 4h14"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+ <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5 14.6 9.4 21.5 12l-6.9 2.6L12 21.5l-2.6-6.9L2.5 12l6.9-2.6z"/></symbol>
+ <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+ <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10m-7 6h4"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 6 4 9.5 8 11 4-1.5 8-5 8-11V5z"/><path d="m8 12 3 3 5-6"/></symbol>
+ <symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></symbol>
+ <symbol id="i-align" viewBox="0 0 24 24"><path d="M4 6h16M4 11h12M4 16h16M4 21h9"/></symbol>
+ <symbol id="i-layer" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></symbol>
+ <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5"/><circle cx="16" cy="17" r="2.5"/></symbol>
+ <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+</svg>
+<div class="shell">
+ <aside class="sidebar">
+   <div class="brand"><div class="brand-mark"><span></span><span></span><span></span><span></span></div><div><strong>resolve<span>iq</span></strong><small>AGENTIC OPERATIONS</small></div></div>
+   <div class="workspace-switcher">
+     <button class="workspace workspace-trigger" id="workspace-trigger" type="button" aria-label="Open workspace menu" aria-haspopup="true" aria-expanded="false" aria-controls="workspace-menu"><div class="workspace-avatar">R</div><div class="workspace-meta"><strong>ResolveIQ Studio</strong><small>Demo workspace</small></div><svg class="ic tiny"><use href="#i-chevron"/></svg></button>
+     <div class="context-menu workspace-menu" id="workspace-menu" hidden role="group" aria-label="Workspace shortcuts">
+       <div class="menu-heading"><strong>ResolveIQ Studio</strong><small>One workspace · Local demonstration</small></div>
+       <button type="button" class="menu-option" data-page="overview"><svg class="ic"><use href="#i-grid"/></svg> Workspace overview</button>
+       <button type="button" class="menu-option" data-page="issues"><svg class="ic"><use href="#i-inbox"/></svg> Issue inbox</button>
+       <button type="button" class="menu-option" data-action="create"><svg class="ic"><use href="#i-plus"/></svg> New issue</button>
+     </div>
+   </div>
+   <div class="nav-group-label">WORKSPACE</div>
+   <nav class="nav" aria-label="Main navigation">
+     <button class="nav-link active" data-page="overview"><svg class="ic"><use href="#i-grid"/></svg>Overview</button>
+     <button class="nav-link" data-page="issues" title="Unseen issues awaiting review"><svg class="ic"><use href="#i-inbox"/></svg>Issue inbox <span id="nav-count" class="nav-count" aria-label="Unseen issues awaiting review" hidden>0</span></button>
+     <button class="nav-link" data-page="playbooks"><svg class="ic"><use href="#i-book"/></svg>Playbooks</button>
+     <button class="nav-link" data-page="activity"><svg class="ic"><use href="#i-activity"/></svg>Activity log</button>
+   </nav>
+   <div class="nav-group-label tools-label">AGENT STATUS</div>
+   <div class="agent-status"><div class="agent-status-icon"><svg class="ic"><use href="#i-spark"/></svg></div><div><strong>Orchestration engine</strong><div class="engine-line"><i></i><span id="engine-text">Checking engine…</span></div></div></div>
+   <div class="side-fill"></div>
+   <div class="side-note"><div class="shield-row"><svg class="ic"><use href="#i-shield"/></svg>Human in the loop</div><p>Every recommended action requires a person to approve it first.</p><div class="note-bars"><span></span><span></span><span></span><span></span><span></span></div></div>
+   <div class="user"><div class="user-avatar">RI</div><div><strong>Workspace admin</strong><small>Demo access</small></div><div class="online-dot"></div></div>
+ </aside>
+ <div class="main-shell">
+   <header class="topbar"><div class="crumb"><span>Workspace</span><svg class="ic tiny"><use href="#i-chevron"/></svg><strong id="breadcrumb">Overview</strong></div><div class="top-actions"><span class="top-date" id="top-date"></span><div class="top-divider"></div><button class="approval-trigger" type="button" data-action="about-approval" title="How human approvals work"> <svg class="ic"><use href="#i-shield"/></svg><span>Approvals</span></button><button class="ai-status-badge is-fallback" type="button" id="ai-status-badge" data-action="about-engine" title="Check AI engine status" aria-live="polite"><span class="ai-status-dot"></span><span id="ai-status-label">Checking AI…</span></button><button class="demo-pill" type="button" data-action="about-demo" title="About the demo environment"><span></span> DEMO MODE</button><div class="account-switcher"><button class="top-avatar" id="account-trigger" type="button" title="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="account-menu">RI</button><div class="context-menu account-menu" id="account-menu" hidden role="group" aria-label="Account options"><div class="menu-heading"><strong>Workspace administrator</strong><small>RI · Demo access (no sign-in)</small></div><button type="button" class="menu-option" data-page="activity"><svg class="ic"><use href="#i-activity"/></svg> View activity log</button><button type="button" class="menu-option" data-action="about-demo"><svg class="ic"><use href="#i-spark"/></svg> About this demo</button><button type="button" class="menu-option" data-action="about-approval"><svg class="ic"><use href="#i-shield"/></svg> Approval policy</button></div></div></div></header>
+   <main id="main" class="content"></main>
+   <footer class="app-footer">ResolveIQ / Operations intelligence <span>Built for accountable automation · v1.2</span></footer>
+ </div>
+</div>
+<div id="overlay" class="overlay" hidden></div>
+<aside id="drawer" class="drawer" hidden aria-label="Issue details"></aside>
+<div id="modal-wrap" class="modal-wrap" hidden><div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Create new issue"></div></div>
+<div id="toast" role="status" class="toast" hidden></div>
+<script src="/static/app.js?v=1.2" defer></script>
+</body>
+</html>
